@@ -11,22 +11,22 @@ export default function Work() {
         <div>
             <h2>Decathlon España S.A.</h2>
             <p>Technical parcel handler</p>
-            <p>July 2023 - September 2023</p>
+            <p className={styles.work}>July 2023 - September 2023</p>
         </div>
         <div>
             <h2>Decathlon España S.A.</h2>
             <p>Technical parcel handler</p>
-            <p>June 2024 - August 2024</p>
+            <p className={styles.work}>June 2024 - August 2024</p>
         </div>
         <div>
             <h2>NTT Data España</h2>
             <p>Frontend Intern (university internship)</p>
-            <p>February 2025 - July 2025</p>
+            <p className={styles.work}>February 2025 - July 2025</p>
         </div>
         <div>
             <h2>NTT Data España</h2>
-            <p>Frontend junior engineer</p>
-            <p>July 2025 - Present</p>
+            <p>Frontend Junior Engineer</p>
+            <p className={styles.work}>July 2025 - Present</p>
         </div>
       </main>
       <footer className={styles.footer}>

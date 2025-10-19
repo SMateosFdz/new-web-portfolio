@@ -61,6 +61,30 @@
   box-shadow: 0px 0px 20px 5px #FFFFFF;
 }
 
+.main div .work{
+  opacity: 0;
+  transform: translateY(6px) scale(0.995);
+  transition: opacity 220ms cubic-bezier(.2,.9,.2,1),
+              transform 220ms cubic-bezier(.2,.9,.2,1);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.main div:hover .work,
+.main div:focus-within .work,
+.main div:focus-visible .work {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main div .work{
+    transform: none;
+    transition: opacity 150ms linear;
+  }
+}
+
 .main code {
   font-family: inherit;
   background: var(--gray-alpha-100);

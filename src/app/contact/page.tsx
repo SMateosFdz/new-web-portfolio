@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "../page.module.css";
+import styles from "./page.module.css";
 import Link from "next/link";
 
 type FormState = {
@@ -50,16 +50,20 @@ export default function Contact() {
       setForm({ name: "", email: "", message: "" });
     } catch (err: any) {
       setStatus("error");
-      setErrorMsg(err?.message || "Error al enviar el mensaje.");
+      const message = (err && typeof err === "object" && "message" in err)
+        ? (err as { message?: unknown }).message
+        : undefined;
+      setErrorMsg(typeof message === "string" ? message : "Error al enviar el mensaje.");
     }
   }
 
   return (
     <div className={styles.page}>
+      <header className={styles.header}>
+        <h1>Contact</h1>
+      </header>
       <main className={styles.main}>
-        <div>
-          <h2>Contact</h2>
-        </div>
+        
         <div>
           <h2>Contact form</h2>
           <form onSubmit={handleSubmit} className={styles.form}>
